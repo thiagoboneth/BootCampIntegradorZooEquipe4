@@ -1,16 +1,16 @@
 package quatro.equipe.model;
 
 public class Paciente {
-    public Long id;
+    public String id;
     public String especie;
     public String raca;
     public String cor;
     public String dataNascimento;
     public String nome;
-    public Character sexo;
+    public String sexo;
     public Proprietario proprietario;
 
-    public Paciente(Long id, String especie, String raca, String cor, String dataNascimento, String nome, Character sexo, Proprietario proprietario) {
+    public Paciente(String id, String especie, String raca, String cor, String dataNascimento, String nome, String sexo, Proprietario proprietario) {
         this.id = id;
         this.especie = especie;
         this.raca = raca;
@@ -21,7 +21,7 @@ public class Paciente {
         this.proprietario = proprietario;
     }
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
@@ -45,7 +45,7 @@ public class Paciente {
         return nome;
     }
 
-    public Character getSexo() {
+    public String getSexo() {
         return sexo;
     }
 

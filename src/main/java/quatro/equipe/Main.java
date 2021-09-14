@@ -5,6 +5,7 @@ import com.opencsv.bean.StatefulBeanToCsvBuilder;
 import com.opencsv.exceptions.CsvDataTypeMismatchException;
 import com.opencsv.exceptions.CsvRequiredFieldEmptyException;
 import quatro.equipe.csv.CsvPessoa;
+import quatro.equipe.csv.Listagem;
 import quatro.equipe.model.Pessoa;
 
 import java.io.IOException;
@@ -18,20 +19,33 @@ public class Main {
 
         public static void main(String[] args) throws IOException, CsvDataTypeMismatchException, CsvRequiredFieldEmptyException
         {
+            Listagem listagem = new Listagem();
 
-            List<Pessoa> pessoas = new ArrayList<>();
-            pessoas.add(new Pessoa("100.000.000-01", "Luana", "Medina", "1995/04/22"));
-            pessoas.add(new Pessoa("100.000.000-05", "Paula", "Lima", "1988/10/10"));
-            pessoas.add(new Pessoa("200.000.000-00", "Ana" , "Oswald", "1998/08/15"));
-            pessoas.add(new Pessoa("000.000.000-02", "Durval" , "Torres", "1975/12/16"));
+            listagem.mostraPessoas();
+            listagem.mostraProprietario();
+            listagem.mostraVeterinario();
 
-            Writer writer = Files.newBufferedWriter(Paths.get("pessoas.csv"));
-            StatefulBeanToCsv<Pessoa> beanToCsv = new StatefulBeanToCsvBuilder(writer).build();
+            listagem.leObjeto();
+            listagem.leObjetoProprietario();
+            listagem.leObjetoVeterinario();
 
-            beanToCsv.write(pessoas);
 
-            writer.flush();
-            writer.close();
+            System.out.println("---------------teste Pessoa---------------");
+
+            listagem.retornaObjetoPessoa();
+
+
+            System.out.println("---------------teste veterinario---------------");
+
+
+            listagem.retornaObjetoVeterinario();
+
+
+            System.out.println("---------------teste Paciente---------------");
+
+
+            System.out.println("Terminar arquivo.txt");
+
 
         }
 }
