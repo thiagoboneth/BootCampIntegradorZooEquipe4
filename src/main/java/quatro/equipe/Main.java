@@ -16,11 +16,13 @@ public class Main {
             listagem.mostraProprietario();
             listagem.mostraVeterinario();
             listagem.mostraPaciente();
+            listagem.mostraConsultas();
 
             listagem.leObjetoPessoa();
             listagem.leObjetoProprietario();
             listagem.leObjetoVeterinario();
             listagem.leObjetoPaciente();
+            listagem.leObjetoConsultas();
 
 
             System.out.println("---------------teste Pessoa---------------");
@@ -42,6 +44,10 @@ public class Main {
 
 
             listagem.retornaObjetoPaciente();
+
+            System.out.println("---------------teste Consulta---------------");
+
+            listagem.retornaObjetoConsultas();
 
 
             System.out.println("Terminar arquivo.txt");

@@ -9,7 +9,6 @@ import java.util.*;
 
 public class Listagem {
 
-
     ArrayList<Pessoa> pessoasObjeto = new ArrayList<>();
     ArrayList<Consulta> consultasObjeto = new ArrayList<>();
 
@@ -17,8 +16,7 @@ public class Listagem {
     ArrayList<String> proprietario = new ArrayList<>();
     ArrayList<String> veterinario = new ArrayList<>();
     ArrayList<String> paciente = new ArrayList<>();
-
-
+    ArrayList<String> consulta = new ArrayList<>();
 
 
 
@@ -68,6 +66,14 @@ public class Listagem {
         }
     }
 
+    public void mostraConsultas() throws IOException {
+
+        Scanner scanner = new Scanner(new FileReader("db/consultas.csv")).useDelimiter("\\n");
+        while (scanner.hasNext()) {
+            System.out.println(scanner.next());
+        }
+    }
+
     public void mostraProprietario() throws IOException {
 
         Scanner scanner = new Scanner(new FileReader("db/proprietario.csv")).useDelimiter("\\n");
@@ -99,6 +105,13 @@ public class Listagem {
         }
     }
 
+    public void leObjetoConsultas() throws IOException {
+        Scanner scanner1 = new Scanner(new FileReader("db/consultas.csv")).useDelimiter("\\n");
+        while (scanner1.hasNext()) {
+            consulta.add(scanner1.next());
+        }
+    }
+
     public void leObjetoProprietario() throws IOException {
         Scanner scanner1 = new Scanner(new FileReader("db/proprietario.csv")).useDelimiter("\\n");
         while (scanner1.hasNext()) {
@@ -125,6 +138,11 @@ public class Listagem {
         pessoas.forEach(x -> System.out.println(mapearParaPessoa(x).toString()));
     }
 
+    public void retornaObjetoConsultas() {
+        consulta.forEach(System.out::println);
+        consulta.forEach(x -> System.out.println(mapearParaConsultas(x).toString()));
+    }
+
     public void retornaObjetoVeterinario() {
         veterinario.forEach(System.out::println);
         veterinario.forEach(x -> System.out.println(mapearParaVeterinario(x).toString()));
@@ -144,6 +162,13 @@ public class Listagem {
         Pessoa pessoa = new Pessoa(valores[0], valores[1], valores[2],valores[3]);
         pessoasObjeto.add(pessoa);
         return pessoa;
+    }
+    public Consulta mapearParaConsultas(String linha) {
+        String[] valores = linha.replaceAll("\"","").split(",");
+        Consulta consulta = new Consulta();
+        Consulta consulta1 = new Consulta(consulta.getDataHora(), consulta.getPaciente(), consulta.motivo, consulta.veterinario, consulta.diagnostico, consulta.tratamento);
+        consultasObjeto.add(consulta1);
+        return consulta;
     }
 
     public Veterinario mapearParaVeterinario(String linha) {

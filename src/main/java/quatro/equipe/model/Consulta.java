@@ -19,6 +19,10 @@ public class Consulta {
         this.tratamento = tratamento;
     }
 
+    public Consulta() {
+
+    }
+
 
     public Date getDataHora() {
         return dataHora;
