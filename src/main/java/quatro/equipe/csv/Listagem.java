@@ -1,21 +1,64 @@
 package quatro.equipe.csv;
 
-import quatro.equipe.model.Paciente;
-import quatro.equipe.model.Pessoa;
-import quatro.equipe.model.Proprietario;
-import quatro.equipe.model.Veterinario;
+import quatro.equipe.model.*;
 
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Scanner;
+import java.util.*;
+
 
 public class Listagem {
+
+
+    ArrayList<Pessoa> pessoasObjeto = new ArrayList<>();
+    ArrayList<Consulta> consultasObjeto = new ArrayList<>();
 
     ArrayList<String> pessoas = new ArrayList<>();
     ArrayList<String> proprietario = new ArrayList<>();
     ArrayList<String> veterinario = new ArrayList<>();
     ArrayList<String> paciente = new ArrayList<>();
+
+
+
+
+
+
+    public void mostraProprietarioCrescente() {
+        Collections.sort(pessoasObjeto, new Comparator<Pessoa>() {
+            @Override
+            public int compare(Pessoa o1, Pessoa o2) {
+                return o1.getSobrenome().compareTo(o2.getSobrenome());
+            }
+        });
+        pessoasObjeto.forEach(System.out::println);
+    }
+
+    public void mostraConsultaData(){
+        Collections.sort(consultasObjeto, new Comparator<Consulta>(){
+
+            @Override
+            public int compare(Consulta o1, Consulta o2) {
+                return o2.getDataHora().compareTo(o1.getDataHora());
+            }
+        });
+        consultasObjeto.forEach(System.out::println);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     public void mostraPessoas() throws IOException {
 
@@ -99,6 +142,7 @@ public class Listagem {
     public Pessoa mapearParaPessoa(String linha) {
         String[] valores = linha.replaceAll("\"","").split(",");
         Pessoa pessoa = new Pessoa(valores[0], valores[1], valores[2],valores[3]);
+        pessoasObjeto.add(pessoa);
         return pessoa;
     }
 

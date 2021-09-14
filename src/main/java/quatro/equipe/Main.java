@@ -46,6 +46,14 @@ public class Main {
 
             System.out.println("Terminar arquivo.txt");
 
+            System.out.println("---------------teste Comparator Proprietario ---------------");
+
+            listagem.mostraProprietarioCrescente();
+
+            System.out.println("---------------teste Comparator Consulta ---------------");
+
+            listagem.mostraConsultaData();
+
 
         }
 }

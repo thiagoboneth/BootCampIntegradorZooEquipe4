@@ -1,6 +1,9 @@
 package quatro.equipe.model;
 
-public class Proprietario{
+
+import java.util.Comparator;
+
+public class Proprietario implements Comparator<Proprietario>, Comparable<Proprietario> {
     public Integer idProprietario;
     public Pessoa proprietario;
     public String endereco;
@@ -54,5 +57,15 @@ public class Proprietario{
     }*/
     public String toString() {
         return "Proprietario{idProprietario='" + idProprietario + ", endereco=" + endereco + ", telefone=" + telefone +  "}";
+    }
+
+    @Override
+    public int compareTo(Proprietario o) {
+        return this.proprietario.nome.compareTo(o.proprietario.nome);
+    }
+
+    @Override
+    public int compare(Proprietario o1, Proprietario o2) {
+        return 0;
     }
 }
