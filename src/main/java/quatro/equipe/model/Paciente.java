@@ -21,6 +21,10 @@ public class Paciente {
         this.proprietario = proprietario;
     }
 
+    public Paciente() {
+
+    }
+
     public String getId() {
         return id;
     }

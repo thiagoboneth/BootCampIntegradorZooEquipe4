@@ -1,33 +1,26 @@
 package quatro.equipe;
 
-import com.opencsv.bean.StatefulBeanToCsv;
-import com.opencsv.bean.StatefulBeanToCsvBuilder;
-import com.opencsv.exceptions.CsvDataTypeMismatchException;
-import com.opencsv.exceptions.CsvRequiredFieldEmptyException;
-import quatro.equipe.csv.CsvPessoa;
 import quatro.equipe.csv.Listagem;
-import quatro.equipe.model.Pessoa;
+
 
 import java.io.IOException;
-import java.io.Writer;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.List;
+
 
 public class Main {
 
-        public static void main(String[] args) throws IOException, CsvDataTypeMismatchException, CsvRequiredFieldEmptyException
+        public static void main(String[] args) throws IOException
         {
             Listagem listagem = new Listagem();
 
             listagem.mostraPessoas();
             listagem.mostraProprietario();
             listagem.mostraVeterinario();
+            listagem.mostraPaciente();
 
-            listagem.leObjeto();
+            listagem.leObjetoPessoa();
             listagem.leObjetoProprietario();
             listagem.leObjetoVeterinario();
+            listagem.leObjetoPaciente();
 
 
             System.out.println("---------------teste Pessoa---------------");
@@ -40,8 +33,15 @@ public class Main {
 
             listagem.retornaObjetoVeterinario();
 
+            System.out.println("---------------teste Proprietario---------------");
+
+            listagem.retornaObjetoProprietario();
+
 
             System.out.println("---------------teste Paciente---------------");
+
+
+            listagem.retornaObjetoPaciente();
 
 
             System.out.println("Terminar arquivo.txt");

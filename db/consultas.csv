@@ -1,0 +1,21 @@
+"dataHora","diagnostico","motivo","paciente","tratamento","veterinario"
+"Tue Sep 14 18:44:54 BRT 2021","Foliculite bacteriana superficial","Animal com caimento de pelos em excesso","
+----- PACIENTE -----
+Id: 1L
+Especie: Gato
+Raca: Maine Coon
+Cor: Marrom
+Nome: Max
+Sexo: M
+Nome Proprietário: Proprietario{idProprietario='1, endereco=Avenida primavera, Condomínio Girassol II apt 408, telefone=01 9 0000-0002}
+","Banhos semanais com clorexidina 3% (HEPTADERMI Spherulites), durante 8 semanas","Veterinario{idMedico='1, medico=Pessoa{cpf='100.000.000-01, nome=Luana, sobrenome=Medina, dataNascimento=1995/04/22}, numeroRegistro=CRMV-0011-MG, especialidade=Animais Domésticos}"
+"Tue Sep 14 18:44:54 BRT 2021","Animal tem caminhado em superficies duras e inóspitas, falta fazer manutencao nos cascos","Rachaduras nos cascos","
+----- PACIENTE -----
+Id: 1L
+Especie: Cachorro
+Raca: Pinche
+Cor: Preto
+Nome: Max
+Sexo: M
+Nome Proprietário: Proprietario{idProprietario='1, endereco=Avenida primavera, Condomínio Girassol II apt 408, telefone=01 9 0000-0002}
+","Limpar os cascos, utilizar reina nas linhas de fraturas para cobrir os machucados","Veterinario{idMedico='2, medico=Pessoa{cpf='100.000.000-01, nome=Luana, sobrenome=Medina, dataNascimento=1995/04/22}, numeroRegistro=CRMV-0011-MG, especialidade=Animais Domésticos}"

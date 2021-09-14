@@ -18,6 +18,10 @@ public class Veterinario{
         this.especialidade = especialidade;
     }
 
+    public Veterinario() {
+
+    }
+
 
     public Pessoa getMedico() {
         return medico;
