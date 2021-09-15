@@ -9,7 +9,7 @@ import java.util.*;
 
 public class Listagem {
 
-    ArrayList<Pessoa> pessoasObjeto = new ArrayList<>();
+    ArrayList<Proprietario> pessoasObjeto = new ArrayList<>();
     ArrayList<Consulta> consultasObjeto = new ArrayList<>();
 
     ArrayList<String> pessoas = new ArrayList<>();
@@ -19,12 +19,10 @@ public class Listagem {
     ArrayList<String> consulta = new ArrayList<>();
 
 
-
-
     public void mostraProprietarioCrescente() {
-        Collections.sort(pessoasObjeto, new Comparator<Pessoa>() {
+        Collections.sort(pessoasObjeto, new Comparator<Proprietario>() {
             @Override
-            public int compare(Pessoa o1, Pessoa o2) {
+            public int compare(Proprietario o1, Proprietario o2) {
                 return o1.getSobrenome().compareTo(o2.getSobrenome());
             }
         });
@@ -43,28 +41,6 @@ public class Listagem {
     }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    public void mostraPessoas() throws IOException {
-
-        Scanner scanner = new Scanner(new FileReader("db/pessoas.csv")).useDelimiter("\\n");
-        while (scanner.hasNext()) {
-            System.out.println(scanner.next());
-        }
-    }
 
     public void mostraConsultas() throws IOException {
 
@@ -98,12 +74,6 @@ public class Listagem {
         }
     }
 
-    public void leObjetoPessoa() throws IOException {
-        Scanner scanner1 = new Scanner(new FileReader("db/pessoas.csv")).useDelimiter("\\n");
-        while (scanner1.hasNext()) {
-            pessoas.add(scanner1.next());
-        }
-    }
 
     public void leObjetoConsultas() throws IOException {
         Scanner scanner1 = new Scanner(new FileReader("db/consultas.csv")).useDelimiter("\\n");
@@ -133,10 +103,6 @@ public class Listagem {
         }
     }
 
-    public void retornaObjetoPessoa() {
-        pessoas.forEach(System.out::println);
-        pessoas.forEach(x -> System.out.println(mapearParaPessoa(x).toString()));
-    }
 
     public void retornaObjetoConsultas() {
         consulta.forEach(System.out::println);
@@ -157,36 +123,30 @@ public class Listagem {
         paciente.forEach(x -> System.out.println(mapearParaPaciente(x).toString()));
     }
 
-    public Pessoa mapearParaPessoa(String linha) {
-        String[] valores = linha.replaceAll("\"","").split(",");
-        Pessoa pessoa = new Pessoa(valores[0], valores[1], valores[2],valores[3]);
-        pessoasObjeto.add(pessoa);
-        return pessoa;
-    }
     public Consulta mapearParaConsultas(String linha) {
         String[] valores = linha.replaceAll("\"","").split(",");
         Consulta consulta = new Consulta();
-        Consulta consulta1 = new Consulta(consulta.getDataHora(), consulta.getPaciente(), consulta.motivo, consulta.veterinario, consulta.diagnostico, consulta.tratamento);
+        Veterinario veterinario = new Veterinario();
+        Consulta consulta1 = new Consulta(consulta.getDataHora(), consulta.getPaciente(), consulta.getMotivo(), consulta.getVeterinario(), consulta.getDiagnostico(), consulta.getTratamento());
         consultasObjeto.add(consulta1);
         return consulta;
     }
 
     public Veterinario mapearParaVeterinario(String linha) {
         String[] valores = linha.replaceAll("\"","").split(",");
-        Veterinario veterinario = new Veterinario();
-        Veterinario pessoa = new Veterinario(veterinario.medico, valores[1],valores[2]);
-        return pessoa;
+        Veterinario veterinario = new Veterinario(valores[0],valores[1],valores[2],valores[3],Integer.valueOf(valores[4]),valores[5],valores[6]);
+        return veterinario;
     }
     public Paciente mapearParaPaciente(String linha) {
         String[] valores = linha.replaceAll("\"","").split(",");
         Paciente paciente = new Paciente();
-        Paciente pessoa = new Paciente(valores[0],valores[1],valores[2],valores[3],valores[4],valores[5],valores[6], paciente.proprietario);
-        return pessoa;
+        Paciente animal = new Paciente(paciente.getEspecie(), paciente.getRaca(), paciente.getCor(), paciente.getDataNascimento(), paciente.getNome(), paciente.getSexo(), paciente.getProprietario());
+        return animal;
     }
     public Proprietario mapearParaProprietario(String linha) {
         String[] valores = linha.replaceAll("\"","").split(",");
-        Proprietario proprietario = new Proprietario();
-        Proprietario pessoa = new Proprietario(proprietario.idProprietario,valores[1],valores[2] );
-        return pessoa;
+        Proprietario proprietario = new Proprietario(valores[0],valores[1],valores[2],valores[3],valores[4],valores[5] );
+        return proprietario;
+
     }
 }

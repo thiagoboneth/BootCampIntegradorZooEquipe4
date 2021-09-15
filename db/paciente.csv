@@ -1,3 +1,3 @@
-"cor","dataNascimento","especie","id","nome","proprietario","raca","sexo"
-"Marrom","2018/07/10","Gato","1L","Max","Proprietario{idProprietario='1, endereco=Avenida primavera, Condomínio Girassol II apt 408, telefone=01 9 0000-0002}","Maine Coon","M"
-"Preto","2018/07/10","Cachorro","1L","Max","Proprietario{idProprietario='1, endereco=Avenida primavera, Condomínio Girassol II apt 408, telefone=01 9 0000-0002}","Pinche","M"
+"cor","dataNascimento","especie","nome","proprietario","raca","sexo"
+"Marrom","2018/07/10","Gato","Max","Proprietario{proprietario=', endereco=Avenida primavera, Condomínio Girassol II apt 408, telefone=01 9 0000-0002}","Maine Coon","M"
+"Preto","2018/07/10","Cachorro","Lulu","Proprietario{proprietario=', endereco=Rua LaCoruna 15 apt 500, telefone=092-88406584}","Pinche","F"

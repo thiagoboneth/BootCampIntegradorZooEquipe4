@@ -13,6 +13,10 @@ public class Pessoa {
         this.dataNascimento = dataNascimento;
     }
 
+    public Pessoa() {
+
+    }
+
     public String getCpf() {
         return cpf;
     }

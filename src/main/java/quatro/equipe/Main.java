@@ -12,22 +12,16 @@ public class Main {
         {
             Listagem listagem = new Listagem();
 
-            listagem.mostraPessoas();
             listagem.mostraProprietario();
             listagem.mostraVeterinario();
             listagem.mostraPaciente();
             listagem.mostraConsultas();
 
-            listagem.leObjetoPessoa();
+
             listagem.leObjetoProprietario();
             listagem.leObjetoVeterinario();
             listagem.leObjetoPaciente();
             listagem.leObjetoConsultas();
-
-
-            System.out.println("---------------teste Pessoa---------------");
-
-            listagem.retornaObjetoPessoa();
 
 
             System.out.println("---------------teste veterinario---------------");
@@ -42,12 +36,11 @@ public class Main {
 
             System.out.println("---------------teste Paciente---------------");
 
-
-            listagem.retornaObjetoPaciente();
+            //listagem.retornaObjetoPaciente();
 
             System.out.println("---------------teste Consulta---------------");
 
-            listagem.retornaObjetoConsultas();
+            //listagem.retornaObjetoConsultas();
 
 
             System.out.println("Terminar arquivo.txt");
@@ -58,8 +51,7 @@ public class Main {
 
             System.out.println("---------------teste Comparator Consulta ---------------");
 
-            listagem.mostraConsultaData();
-
+            //listagem.mostraConsultaData();
 
         }
 }

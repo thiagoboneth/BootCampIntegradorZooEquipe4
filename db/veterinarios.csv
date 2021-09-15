@@ -1,3 +1,3 @@
-"especialidade","idMedico","medico","numeroRegistro"
-"Animais Domésticos","","Pessoa{cpf='100.000.000-01, nome=Luana, sobrenome=Medina, dataNascimento=1995/04/22}","CRMV-0011-MG"
-"Animais Domésticos","","Pessoa{cpf='100.000.000-01, nome=Luana, sobrenome=Medina, dataNascimento=1995/04/22}","CRMV-0011-MG"
+"cpf","dataNascimento","especialidade","idMedico","nome","numeroRegistro","sobrenome"
+"100.000.000-01","1995/04/22","Animais Domesticos","","Luana","123456789","Medina"
+"200.000.000-01","1996/05/25","Animais de Fazenda","","Pedro","987654321","Luis"

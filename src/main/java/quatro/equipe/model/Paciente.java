@@ -1,7 +1,6 @@
 package quatro.equipe.model;
 
 public class Paciente {
-    public String id;
     public String especie;
     public String raca;
     public String cor;
@@ -10,8 +9,8 @@ public class Paciente {
     public String sexo;
     public Proprietario proprietario;
 
-    public Paciente(String id, String especie, String raca, String cor, String dataNascimento, String nome, String sexo, Proprietario proprietario) {
-        this.id = id;
+    public Paciente(String especie, String raca, String cor, String dataNascimento, String nome, String sexo, Proprietario proprietario) {
+
         this.especie = especie;
         this.raca = raca;
         this.cor = cor;
@@ -25,9 +24,6 @@ public class Paciente {
 
     }
 
-    public String getId() {
-        return id;
-    }
 
     public String getEspecie() {
         return especie;
@@ -59,13 +55,14 @@ public class Paciente {
 
     @Override
     public String toString() {
-        return ("\n----- PACIENTE -----" + "\n"
-                + "Id: " + this.id + "\n"
-                + "Especie: " + this.especie+ "\n"
-                + "Raca: " + this.raca + "\n"
-                + "Cor: " + this.cor + "\n"
-                + "Nome: " + this.nome + "\n"
-                + "Sexo: " + this.sexo + "\n"
-                + "Nome Proprietário: " + this.proprietario + "\n");
+        return "Paciente{" +
+                "especie='" + especie + '\'' +
+                ", raca='" + raca + '\'' +
+                ", cor='" + cor + '\'' +
+                ", dataNascimento='" + dataNascimento + '\'' +
+                ", nome='" + nome + '\'' +
+                ", sexo='" + sexo + '\'' +
+                ", proprietario=" + proprietario +
+                '}';
     }
 }

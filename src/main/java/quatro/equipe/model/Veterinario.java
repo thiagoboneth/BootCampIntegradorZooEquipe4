@@ -1,30 +1,19 @@
 package quatro.equipe.model;
 
-public class Veterinario{
-    public long idMedico;
-    public Pessoa medico;
+public class Veterinario extends Pessoa{
+    public int idMedico;
     public String numeroRegistro;
     public String especialidade;
 
-    public Veterinario(Pessoa medico, String numeroRegistro, String especialidade) {
-        this.medico = medico;
-        this.numeroRegistro = numeroRegistro;
-        this.especialidade = especialidade;
-    }
-    public Veterinario(long idMedico,Pessoa medico, String numeroRegistro, String especialidade) {
+    public Veterinario(String cpf, String nome, String sobrenome, String dataNascimento, int idMedico, String numeroRegistro, String especialidade) {
+        super(cpf,nome,sobrenome,dataNascimento);
         this.idMedico = idMedico;
-        this.medico = medico;
         this.numeroRegistro = numeroRegistro;
         this.especialidade = especialidade;
     }
 
     public Veterinario() {
 
-    }
-
-
-    public Pessoa getMedico() {
-        return medico;
     }
 
     public String getNumeroRegistro() {
@@ -35,15 +24,9 @@ public class Veterinario{
         return especialidade;
     }
 
-    @Override
-/*    public String toString() {
-        return ("\n----- PROPRIETARIO -----" + "\n"
-                + "MÃ©dico: " + this.medico + "\n"
-                + "Registro: " + this.numeroRegistro + "\n"
-                + "Especialidade: " + this.especialidade + "\n");
-    }*/
+
     public String toString() {
-        return "Veterinario{idMedico='" + idMedico + ", medico=" + medico + ", numeroRegistro=" + numeroRegistro+ ", especialidade=" + especialidade + "}";
+        return "Veterinario{idMedico='" + idMedico + ", numeroRegistro=" + numeroRegistro+ ", especialidade=" + especialidade + "}";
     }
 
 }
